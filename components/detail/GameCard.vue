@@ -1,18 +1,18 @@
 <template>
   <div class="md:w-[60%] md:h-[40%] mx-auto">
-    <breadcrumb-comps :game-title="currentGame.title" />
+    <breadcrumb-comps :game-title="gameTitle" />
     <div class="md:bg-[#FFFFFF] p-7">
       <img
         id="image"
-        :src="currentGame.thumbnail"
-        :alt="currentGame.title"
+        :src="gameThumbnail"
+        :alt="gameTitle"
         class="w-full shadow-2xl rounded-lg"
       />
       <div
         class="my-3 max-md:bg-[#FFFFFF] max-md:rounded-lg max-md:px-6 max-md:py-4"
       >
-        <label class="font-bold text-base">{{ currentGame.title }}</label>
-        <p class="mt-5">{{ currentGame.short_description }}</p>
+        <label class="font-bold text-base">{{ gameTitle }}</label>
+        <p class="mt-5">{{ gameDescription }}</p>
       </div>
     </div>
   </div>
@@ -26,8 +26,20 @@ export default {
   },
   layout: 'header',
   props: {
-    currentGame: {
-      type: Object,
+    gameId: {
+      type: Number,
+      required: true,
+    },
+    gameTitle: {
+      type: String,
+      required: true,
+    },
+    gameThumbnail: {
+      type: String,
+      required: true,
+    },
+    gameDescription: {
+      type: String,
       required: true,
     },
   },

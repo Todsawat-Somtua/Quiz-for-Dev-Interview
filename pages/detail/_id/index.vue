@@ -1,6 +1,11 @@
 <template>
   <div>
-    <game-card :current-game="gameQuery" />
+    <game-card
+      :game-id="gameQuery.id"
+      :game-title="gameQuery.title"
+      :game-thumbnail="gameQuery.thumbnail"
+      :game-description="gameQuery.short_description"
+    />
   </div>
 </template>
 
