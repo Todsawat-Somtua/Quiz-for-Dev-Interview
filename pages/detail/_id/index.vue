@@ -1,6 +1,6 @@
 <template>
   <div>
-    <game-card
+    <game-detail
       :game-id="gameQuery.id"
       :game-title="gameQuery.title"
       :game-thumbnail="gameQuery.thumbnail"
@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import GameCard from '~/components/detail/GameCard.vue'
+import GameDetail from '~/components/detail/GameDetail.vue'
 export default {
   components: {
-    GameCard,
+    GameDetail,
   },
   layout: 'header',
   validate(data) {
